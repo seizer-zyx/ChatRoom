@@ -7,6 +7,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
 
+/**
+ * @Author: seizer
+ * @Date: 2023/4/27
+ * @Blog: https://www.cnblogs.com/seizer
+ * @Description:
+ */
+
 public class Server {
 
     private static HashMap<String, User> users = new HashMap<>();
@@ -44,6 +51,12 @@ public class Server {
         }
     }
 
+    /**
+     * @param mseeage 发送的消息
+     * @Description 群发消息
+     * @author seizer
+     * @date 20:34 2023/4/27
+     **/
     private static void SendAll(String mseeage) {
         for (User user : users.values()) {
             boolean flag = SendMessage(user.accept, mseeage);
@@ -53,6 +66,14 @@ public class Server {
         }
     }
 
+    /**
+     * @param accept  指定的套接字Socket
+     * @param message 发送的消息
+     * @return boolean
+     * @Description 发送消息给指定的套接字Socket
+     * @author seizer
+     * @date 20:33 2023/4/27
+     **/
     private static boolean SendMessage(Socket accept, String message) {
         try {
             DataOutputStream dataOutputStream = new DataOutputStream(accept.getOutputStream());

@@ -9,6 +9,13 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+/**
+ * @Author: seizer
+ * @Date: 2023/4/27
+ * @Blog: https://www.cnblogs.com/seizer
+ * @Description:
+ */
+
 public class ChatClient {
     private javax.swing.JPanel JPanel;
     private JTextField textField2;
